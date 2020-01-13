@@ -64,15 +64,18 @@
             // 
             this.Timer3.Enabled = true;
             this.Timer3.Interval = 10;
+            this.Timer3.Tick += new System.EventHandler(this.Timer3_Tick);
             // 
             // Timer2
             // 
             this.Timer2.Interval = 1000;
+            this.Timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // Timer1
             // 
             this.Timer1.Enabled = true;
             this.Timer1.Interval = 3900;
+            this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Frmsplash
             // 
@@ -85,6 +88,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frmsplash";
             this.Text = "Frmsplash";
+            this.Load += new System.EventHandler(this.Frmsplash_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
