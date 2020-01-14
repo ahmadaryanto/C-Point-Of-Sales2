@@ -117,7 +117,15 @@ namespace Program_UAS_AHMAD
 
         private void DG_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.DG.Rows[e.RowIndex];
 
+                txtid.Text = row.Cells["ID"].Value.ToString();
+                txtdes.Text = row.Cells["Nama_Item"].Value.ToString();
+                txtharga.Text = row.Cells["Harga"].Value.ToString();
+                txtstok.Text = row.Cells["stok"].Value.ToString();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -127,7 +135,28 @@ namespace Program_UAS_AHMAD
 
         private void btnew_Click(object sender, EventArgs e)
         {
-
+            if (txtid.Text == "" || txtharga.Text == "" || txtdes.Text == "" || txtkat.Text == "" || txtstok.Text == "")
+            {
+                MessageBox.Show("Data tidak boleh kosong", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtdes.Clear();
+                txtharga.Clear();
+                txtid.Clear();
+            }
+            try
+            {
+                string sql = string.Format("Insert into TB_PRODUCTS (ID,Nama_Item,Harga,stok,kategori) Values('{0}','{1}','{2}','{3}','{4}')", txtid.Text, txtdes.Text, txtharga.Text,txtstok.Text,txtkat.Text);
+                OleDbConnection con = new OleDbConnection(koneksi);
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Data Tersimpan", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tampil();
+            }
+            catch (OleDbException salah)
+            {
+                MessageBox.Show(salah.ToString());
+            }
         }
     }
 }
