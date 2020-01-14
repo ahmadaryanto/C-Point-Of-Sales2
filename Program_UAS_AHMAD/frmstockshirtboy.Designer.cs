@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmstockshirtboy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtstok = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.txtharga = new System.Windows.Forms.TextBox();
@@ -51,6 +51,7 @@
             this.btsave = new System.Windows.Forms.Button();
             this.txtkat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblid = new System.Windows.Forms.Label();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.Panel1.SuspendLayout();
@@ -98,13 +99,12 @@
             this.button1.TabIndex = 25;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtstok
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(154, 173);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 29);
-            this.textBox1.TabIndex = 6;
+            this.txtstok.Location = new System.Drawing.Point(154, 173);
+            this.txtstok.Name = "txtstok";
+            this.txtstok.Size = new System.Drawing.Size(75, 29);
+            this.txtstok.TabIndex = 6;
             // 
             // label4
             // 
@@ -117,11 +117,12 @@
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.lblid);
             this.GroupBox1.Controls.Add(this.txtkat);
             this.GroupBox1.Controls.Add(this.label5);
             this.GroupBox1.Controls.Add(this.button3);
             this.GroupBox1.Controls.Add(this.button1);
-            this.GroupBox1.Controls.Add(this.textBox1);
+            this.GroupBox1.Controls.Add(this.txtstok);
             this.GroupBox1.Controls.Add(this.label4);
             this.GroupBox1.Controls.Add(this.txtharga);
             this.GroupBox1.Controls.Add(this.txtdes);
@@ -139,7 +140,6 @@
             // 
             // txtharga
             // 
-            this.txtharga.Enabled = false;
             this.txtharga.Location = new System.Drawing.Point(155, 136);
             this.txtharga.Name = "txtharga";
             this.txtharga.Size = new System.Drawing.Size(241, 29);
@@ -147,7 +147,6 @@
             // 
             // txtdes
             // 
-            this.txtdes.Enabled = false;
             this.txtdes.Location = new System.Drawing.Point(157, 64);
             this.txtdes.Name = "txtdes";
             this.txtdes.Size = new System.Drawing.Size(241, 29);
@@ -155,8 +154,7 @@
             // 
             // txtid
             // 
-            this.txtid.Enabled = false;
-            this.txtid.Location = new System.Drawing.Point(157, 29);
+            this.txtid.Location = new System.Drawing.Point(199, 27);
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(197, 29);
             this.txtid.TabIndex = 2;
@@ -175,9 +173,9 @@
             this.Label2.AutoSize = true;
             this.Label2.Location = new System.Drawing.Point(6, 67);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(47, 24);
+            this.Label2.Size = new System.Drawing.Size(86, 24);
             this.Label2.TabIndex = 1;
-            this.Label2.Text = "Baju";
+            this.Label2.Text = "Deskripsi";
             // 
             // Label1
             // 
@@ -241,14 +239,14 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle1;
             this.DG.Location = new System.Drawing.Point(8, 316);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
@@ -256,6 +254,7 @@
             this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DG.Size = new System.Drawing.Size(608, 231);
             this.DG.TabIndex = 27;
+            this.DG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_CellContentClick);
             // 
             // Panel1
             // 
@@ -279,10 +278,10 @@
             this.btsave.Size = new System.Drawing.Size(50, 50);
             this.btsave.TabIndex = 3;
             this.btsave.UseVisualStyleBackColor = true;
+            this.btsave.Click += new System.EventHandler(this.btsave_Click);
             // 
             // txtkat
             // 
-            this.txtkat.Enabled = false;
             this.txtkat.Location = new System.Drawing.Point(157, 99);
             this.txtkat.Name = "txtkat";
             this.txtkat.Size = new System.Drawing.Size(241, 29);
@@ -297,6 +296,15 @@
             this.label5.Size = new System.Drawing.Size(79, 24);
             this.label5.TabIndex = 27;
             this.label5.Text = "Kategori";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(153, 30);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(40, 24);
+            this.lblid.TabIndex = 29;
+            this.lblid.Text = "BP-";
             // 
             // frmstockshirtboy
             // 
@@ -324,7 +332,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button1;
-        internal System.Windows.Forms.TextBox textBox1;
+        internal System.Windows.Forms.TextBox txtstok;
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.TextBox txtharga;
@@ -342,5 +350,6 @@
         internal System.Windows.Forms.Button btsave;
         internal System.Windows.Forms.TextBox txtkat;
         internal System.Windows.Forms.Label label5;
+        internal System.Windows.Forms.Label lblid;
     }
 }
