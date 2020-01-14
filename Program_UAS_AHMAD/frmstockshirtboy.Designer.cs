@@ -285,6 +285,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmstockshirtboy";
             this.Text = "frmstockshirtboy";
+            this.Load += new System.EventHandler(this.frmstockshirtboy_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
