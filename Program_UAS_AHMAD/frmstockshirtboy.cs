@@ -55,7 +55,25 @@ namespace Program_UAS_AHMAD
 
         private void btdelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DialogResult result = MessageBox.Show("Yakin Hapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    string sql = string.Format("delete * from TB_PRODUCTS  where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
+                    OleDbConnection con = new OleDbConnection(koneksi);
+                    con.Open();
+                    OleDbCommand cmd = new OleDbCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    tampil();
+                }
+            }
 
+            catch (OleDbException salah)
+            {
+                MessageBox.Show(salah.ToString());
+            }
         }
 
         private void btsearch_Click(object sender, EventArgs e)
@@ -81,7 +99,7 @@ namespace Program_UAS_AHMAD
 
             try
             {
-                string sql = string.Format("Update TB_PRODUCTS  set Nama_Item ='" + txtdes.Text + "',Harga='" + txtharga.Text + "',stok ='" + txtstok.Text + "', where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
+                string sql = string.Format("Update TB_PRODUCTS  set Nama_Item ='" + txtdes.Text + "',Harga='" + txtharga.Text + "',stok ='" + txtstok.Text + "' where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
                 OleDbConnection con = new OleDbConnection(koneksi);
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand(sql, con);
@@ -98,6 +116,16 @@ namespace Program_UAS_AHMAD
         }
 
         private void DG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnew_Click(object sender, EventArgs e)
         {
 
         }
