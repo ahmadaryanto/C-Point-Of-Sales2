@@ -73,7 +73,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.BackColor = System.Drawing.Color.MidnightBlue;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button5.FlatAppearance.BorderSize = 0;
@@ -110,6 +110,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(3, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 24);
@@ -132,6 +133,7 @@
             this.GroupBox1.Controls.Add(this.Label2);
             this.GroupBox1.Controls.Add(this.Label1);
             this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.GroupBox1.Location = new System.Drawing.Point(8, 86);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Size = new System.Drawing.Size(608, 210);
@@ -163,6 +165,7 @@
             // Label3
             // 
             this.Label3.AutoSize = true;
+            this.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Label3.Location = new System.Drawing.Point(4, 139);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(61, 24);
@@ -172,6 +175,7 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
+            this.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Label2.Location = new System.Drawing.Point(6, 67);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(86, 24);
@@ -181,6 +185,7 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
+            this.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Label1.Location = new System.Drawing.Point(6, 32);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(27, 24);
@@ -189,6 +194,7 @@
             // 
             // btnew
             // 
+            this.btnew.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnew.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnew.Image = ((System.Drawing.Image)(resources.GetObject("btnew.Image")));
@@ -196,7 +202,7 @@
             this.btnew.Name = "btnew";
             this.btnew.Size = new System.Drawing.Size(50, 50);
             this.btnew.TabIndex = 2;
-            this.btnew.UseVisualStyleBackColor = true;
+            this.btnew.UseVisualStyleBackColor = false;
             this.btnew.Click += new System.EventHandler(this.btnew_Click);
             // 
             // btsearch
@@ -213,6 +219,7 @@
             // 
             // btdelete
             // 
+            this.btdelete.BackColor = System.Drawing.Color.DodgerBlue;
             this.btdelete.Dock = System.Windows.Forms.DockStyle.Left;
             this.btdelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btdelete.Image = ((System.Drawing.Image)(resources.GetObject("btdelete.Image")));
@@ -220,11 +227,12 @@
             this.btdelete.Name = "btdelete";
             this.btdelete.Size = new System.Drawing.Size(50, 50);
             this.btdelete.TabIndex = 4;
-            this.btdelete.UseVisualStyleBackColor = true;
+            this.btdelete.UseVisualStyleBackColor = false;
             this.btdelete.Click += new System.EventHandler(this.btdelete_Click);
             // 
             // Button2
             // 
+            this.Button2.BackColor = System.Drawing.Color.DodgerBlue;
             this.Button2.Dock = System.Windows.Forms.DockStyle.Left;
             this.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button2.Location = new System.Drawing.Point(200, 0);
@@ -232,7 +240,7 @@
             this.Button2.Size = new System.Drawing.Size(51, 50);
             this.Button2.TabIndex = 6;
             this.Button2.Text = "Show All";
-            this.Button2.UseVisualStyleBackColor = true;
+            this.Button2.UseVisualStyleBackColor = false;
             this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // DG
@@ -272,6 +280,7 @@
             // 
             // btsave
             // 
+            this.btsave.BackColor = System.Drawing.Color.DodgerBlue;
             this.btsave.Dock = System.Windows.Forms.DockStyle.Left;
             this.btsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btsave.Image = ((System.Drawing.Image)(resources.GetObject("btsave.Image")));
@@ -279,11 +288,12 @@
             this.btsave.Name = "btsave";
             this.btsave.Size = new System.Drawing.Size(50, 50);
             this.btsave.TabIndex = 3;
-            this.btsave.UseVisualStyleBackColor = true;
+            this.btsave.UseVisualStyleBackColor = false;
             this.btsave.Click += new System.EventHandler(this.btsave_Click);
             // 
             // txtkat
             // 
+            this.txtkat.Enabled = false;
             this.txtkat.Location = new System.Drawing.Point(157, 99);
             this.txtkat.Name = "txtkat";
             this.txtkat.Size = new System.Drawing.Size(241, 29);
@@ -293,6 +303,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(3, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 24);
@@ -302,6 +313,7 @@
             // lblid
             // 
             this.lblid.AutoSize = true;
+            this.lblid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblid.Location = new System.Drawing.Point(153, 30);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(40, 24);
@@ -312,6 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(632, 554);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.GroupBox1);

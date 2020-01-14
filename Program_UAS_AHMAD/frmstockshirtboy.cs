@@ -24,7 +24,7 @@ namespace Program_UAS_AHMAD
         private void tampil()
         {
             ds.Clear();
-            string sql = "select ID,Nama_Item,harga,stok,kategori from TB_PRODUCTS where kategori='Baju Pria'";
+            string sql = "select ID,Nama_Item,harga,stok,kategori from TB_PRODUCTS where kategori='" + txtkat.Text + "'";
             OleDbConnection con = new OleDbConnection(koneksi);
             con.Open();
             OleDbDataAdapter da = new OleDbDataAdapter(sql, con);
