@@ -16,6 +16,7 @@ namespace Program_UAS_AHMAD
     {
         string koneksi = "Provider = Microsoft.jet.oledb.4.0;Data source=" + Application.StartupPath + "/Gucci_Gang.mdb";
         DataSet ds = new DataSet();
+        double grandstok, stok;
         public frmstockshirtgirl()
         {
             InitializeComponent();
@@ -138,6 +139,21 @@ namespace Program_UAS_AHMAD
         private void Button2_Click(object sender, EventArgs e)
         {
             tampil();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            stok = Convert.ToDouble(txtstok.Text);
+            grandstok = stok - 1;
+            txtstok.Text = grandstok.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            stok = Convert.ToDouble(txtstok.Text);
+            grandstok = stok + 1;
+            txtstok.Text = grandstok.ToString();
         }
     }
 }
