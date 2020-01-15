@@ -83,7 +83,25 @@ namespace Program_UAS_AHMAD
 
         private void btdelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DialogResult result = MessageBox.Show("Yakin Hapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    string sql = string.Format("delete * from TB_PRODUCTS  where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
+                    OleDbConnection con = new OleDbConnection(koneksi);
+                    con.Open();
+                    OleDbCommand cmd = new OleDbCommand(sql, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    tampil();
+                }
+            }
 
+            catch (OleDbException salah)
+            {
+                MessageBox.Show(salah.ToString());
+            }
         }
 
         private void btsearch_Click(object sender, EventArgs e)
