@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmstockshirtgirl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblid = new System.Windows.Forms.Label();
             this.txtkat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -173,6 +173,7 @@
             this.btsave.Size = new System.Drawing.Size(50, 50);
             this.btsave.TabIndex = 3;
             this.btsave.UseVisualStyleBackColor = false;
+            this.btsave.Click += new System.EventHandler(this.btsave_Click);
             // 
             // DG
             // 
@@ -180,14 +181,14 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle5;
             this.DG.Location = new System.Drawing.Point(8, 316);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
@@ -219,6 +220,7 @@
             this.Button2.TabIndex = 6;
             this.Button2.Text = "Show All";
             this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btsearch
             // 
@@ -230,6 +232,7 @@
             this.btsearch.Size = new System.Drawing.Size(50, 50);
             this.btsearch.TabIndex = 5;
             this.btsearch.UseVisualStyleBackColor = true;
+            this.btsearch.Click += new System.EventHandler(this.btsearch_Click);
             // 
             // btdelete
             // 
@@ -242,6 +245,7 @@
             this.btdelete.Size = new System.Drawing.Size(50, 50);
             this.btdelete.TabIndex = 4;
             this.btdelete.UseVisualStyleBackColor = false;
+            this.btdelete.Click += new System.EventHandler(this.btdelete_Click);
             // 
             // btnew
             // 
@@ -254,6 +258,7 @@
             this.btnew.Size = new System.Drawing.Size(50, 50);
             this.btnew.TabIndex = 2;
             this.btnew.UseVisualStyleBackColor = false;
+            this.btnew.Click += new System.EventHandler(this.btnew_Click);
             // 
             // Label2
             // 

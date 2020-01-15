@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmstockshirtboy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtstok = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblid = new System.Windows.Forms.Label();
+            this.txtkat = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtharga = new System.Windows.Forms.TextBox();
             this.txtdes = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
@@ -49,9 +52,6 @@
             this.DG = new System.Windows.Forms.DataGridView();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.btsave = new System.Windows.Forms.Button();
-            this.txtkat = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblid = new System.Windows.Forms.Label();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.Panel1.SuspendLayout();
@@ -140,6 +140,35 @@
             this.GroupBox1.TabIndex = 25;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Detail";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblid.Location = new System.Drawing.Point(153, 30);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(40, 24);
+            this.lblid.TabIndex = 29;
+            this.lblid.Text = "PB-";
+            // 
+            // txtkat
+            // 
+            this.txtkat.Enabled = false;
+            this.txtkat.Location = new System.Drawing.Point(157, 99);
+            this.txtkat.Name = "txtkat";
+            this.txtkat.Size = new System.Drawing.Size(241, 29);
+            this.txtkat.TabIndex = 28;
+            this.txtkat.Text = "Baju Pria";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(3, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 24);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Kategori";
             // 
             // txtharga
             // 
@@ -249,14 +278,14 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle1;
             this.DG.Location = new System.Drawing.Point(8, 316);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
@@ -290,35 +319,6 @@
             this.btsave.TabIndex = 3;
             this.btsave.UseVisualStyleBackColor = false;
             this.btsave.Click += new System.EventHandler(this.btsave_Click);
-            // 
-            // txtkat
-            // 
-            this.txtkat.Enabled = false;
-            this.txtkat.Location = new System.Drawing.Point(157, 99);
-            this.txtkat.Name = "txtkat";
-            this.txtkat.Size = new System.Drawing.Size(241, 29);
-            this.txtkat.TabIndex = 28;
-            this.txtkat.Text = "Baju Pria";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(3, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 24);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Kategori";
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblid.Location = new System.Drawing.Point(153, 30);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(40, 24);
-            this.lblid.TabIndex = 29;
-            this.lblid.Text = "BP-";
             // 
             // frmstockshirtboy
             // 

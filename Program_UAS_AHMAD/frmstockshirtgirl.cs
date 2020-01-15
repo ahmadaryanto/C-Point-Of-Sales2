@@ -38,5 +38,51 @@ namespace Program_UAS_AHMAD
         {
             tampil();
         }
+
+        private void btsave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btdelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btsearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnew_Click(object sender, EventArgs e)
+        {
+            if (txtid.Text == "" || txtharga.Text == "" || txtdes.Text == "" || txtkat.Text == "" || txtstok.Text == "")
+            {
+                MessageBox.Show("Data tidak boleh kosong", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtdes.Clear();
+                txtharga.Clear();
+                txtid.Clear();
+            }
+            try
+            {
+                string sql = string.Format("Insert into TB_PRODUCTS (ID,Nama_Item,Harga,stok,kategori) Values('{0}','{1}','{2}','{3}','{4}')", txtid.Text, txtdes.Text, txtharga.Text, txtstok.Text, txtkat.Text);
+                OleDbConnection con = new OleDbConnection(koneksi);
+                con.Open();
+                OleDbCommand cmd = new OleDbCommand(sql, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Data Tersimpan", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tampil();
+            }
+            catch (OleDbException salah)
+            {
+                MessageBox.Show(salah.ToString());
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            tampil();
+        }
     }
 }
