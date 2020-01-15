@@ -36,6 +36,11 @@
             this.txtstok = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblfilename = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnopen = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblid = new System.Windows.Forms.Label();
             this.txtkat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +58,7 @@
             this.Panel1 = new System.Windows.Forms.Panel();
             this.btsave = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +86,7 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(581, 8);
+            this.button5.Location = new System.Drawing.Point(719, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(44, 39);
             this.button5.TabIndex = 28;
@@ -121,6 +127,11 @@
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.lblfilename);
+            this.GroupBox1.Controls.Add(this.label6);
+            this.GroupBox1.Controls.Add(this.button4);
+            this.GroupBox1.Controls.Add(this.btnopen);
+            this.GroupBox1.Controls.Add(this.pictureBox1);
             this.GroupBox1.Controls.Add(this.lblid);
             this.GroupBox1.Controls.Add(this.txtkat);
             this.GroupBox1.Controls.Add(this.label5);
@@ -138,10 +149,67 @@
             this.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.GroupBox1.Location = new System.Drawing.Point(8, 86);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(608, 210);
+            this.GroupBox1.Size = new System.Drawing.Size(755, 224);
             this.GroupBox1.TabIndex = 25;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Detail";
+            // 
+            // lblfilename
+            // 
+            this.lblfilename.AutoSize = true;
+            this.lblfilename.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblfilename.Location = new System.Drawing.Point(533, 190);
+            this.lblfilename.Name = "lblfilename";
+            this.lblfilename.Size = new System.Drawing.Size(16, 24);
+            this.lblfilename.TabIndex = 33;
+            this.lblfilename.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(423, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 24);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "File name :";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(594, 102);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(83, 43);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "ALL";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // btnopen
+            // 
+            this.btnopen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnopen.FlatAppearance.BorderSize = 0;
+            this.btnopen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnopen.Location = new System.Drawing.Point(594, 48);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(83, 43);
+            this.btnopen.TabIndex = 7;
+            this.btnopen.Text = "Open";
+            this.btnopen.UseVisualStyleBackColor = false;
+            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SlateGray;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(427, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(161, 151);
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
             // 
             // lblid
             // 
@@ -293,7 +361,7 @@
             this.DG.ReadOnly = true;
             this.DG.RowHeadersVisible = false;
             this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DG.Size = new System.Drawing.Size(608, 231);
+            this.DG.Size = new System.Drawing.Size(755, 231);
             this.DG.TabIndex = 27;
             this.DG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_CellContentClick);
             // 
@@ -327,7 +395,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(632, 554);
+            this.ClientSize = new System.Drawing.Size(774, 554);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.DG);
@@ -338,6 +406,7 @@
             this.Load += new System.EventHandler(this.frmstockshirtboy_Load);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).EndInit();
             this.Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -368,5 +437,10 @@
         internal System.Windows.Forms.TextBox txtkat;
         internal System.Windows.Forms.Label label5;
         internal System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnopen;
+        internal System.Windows.Forms.Label lblfilename;
+        internal System.Windows.Forms.Label label6;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace Program_UAS_AHMAD
 {
@@ -17,7 +18,7 @@ namespace Program_UAS_AHMAD
         DataSet ds = new DataSet();
 
         double grandstok,stok;
-        
+        string filename1,filename2;
 
         public frmstockshirtboy()
         {
@@ -128,6 +129,7 @@ namespace Program_UAS_AHMAD
                 txtdes.Text = row.Cells["Nama_Item"].Value.ToString();
                 txtharga.Text = row.Cells["Harga"].Value.ToString();
                 txtstok.Text = row.Cells["stok"].Value.ToString();
+
             }
         }
 
@@ -167,6 +169,26 @@ namespace Program_UAS_AHMAD
             stok = Convert.ToDouble(txtstok.Text);
             grandstok = stok + 1;
             txtstok.Text = grandstok.ToString();
+        }
+
+        private void btnopen_Click(object sender, EventArgs e)
+        {
+            using(OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.JPG", ValidateNames = true, Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+
+                    filename1 = ofd.FileName;
+                    filename2 = ofd.FileName;
+
+                    filename1 = Path.GetFileName(filename1);
+                    lblfilename.Text = filename1;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    pictureBox1.Image = Image.FromFile(filename2);
+                }
+              
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
