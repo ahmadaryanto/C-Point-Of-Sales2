@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmstockshirtboy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@
             this.DG = new System.Windows.Forms.DataGridView();
             this.Panel1 = new System.Windows.Forms.Panel();
             this.btsave = new System.Windows.Forms.Button();
+            this.lblfilename2 = new System.Windows.Forms.Label();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
@@ -127,6 +128,7 @@
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.lblfilename2);
             this.GroupBox1.Controls.Add(this.lblfilename);
             this.GroupBox1.Controls.Add(this.label6);
             this.GroupBox1.Controls.Add(this.button4);
@@ -163,6 +165,7 @@
             this.lblfilename.Size = new System.Drawing.Size(16, 24);
             this.lblfilename.TabIndex = 33;
             this.lblfilename.Text = "-";
+            this.lblfilename.Visible = false;
             // 
             // label6
             // 
@@ -184,8 +187,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 43);
             this.button4.TabIndex = 31;
-            this.button4.Text = "ALL";
+            this.button4.Text = "CLEAR";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnopen
             // 
@@ -219,7 +223,7 @@
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(40, 24);
             this.lblid.TabIndex = 29;
-            this.lblid.Text = "PB-";
+            this.lblid.Text = "BP-";
             // 
             // txtkat
             // 
@@ -348,14 +352,14 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle5;
             this.DG.Location = new System.Drawing.Point(8, 316);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
@@ -389,6 +393,16 @@
             this.btsave.TabIndex = 3;
             this.btsave.UseVisualStyleBackColor = false;
             this.btsave.Click += new System.EventHandler(this.btsave_Click);
+            // 
+            // lblfilename2
+            // 
+            this.lblfilename2.AutoSize = true;
+            this.lblfilename2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblfilename2.Location = new System.Drawing.Point(533, 190);
+            this.lblfilename2.Name = "lblfilename2";
+            this.lblfilename2.Size = new System.Drawing.Size(16, 24);
+            this.lblfilename2.TabIndex = 34;
+            this.lblfilename2.Text = "-";
             // 
             // frmstockshirtboy
             // 
@@ -442,5 +456,6 @@
         private System.Windows.Forms.Button btnopen;
         internal System.Windows.Forms.Label lblfilename;
         internal System.Windows.Forms.Label label6;
+        internal System.Windows.Forms.Label lblfilename2;
     }
 }

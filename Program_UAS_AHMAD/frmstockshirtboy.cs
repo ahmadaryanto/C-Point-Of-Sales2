@@ -16,6 +16,8 @@ namespace Program_UAS_AHMAD
     {
         string koneksi = "Provider = Microsoft.jet.oledb.4.0;Data source=" + Application.StartupPath + "/Gucci_Gang.mdb";
         DataSet ds = new DataSet();
+        OleDbCommand cmd = new OleDbCommand();
+  
 
         double grandstok,stok;
         string filename1,filename2;
@@ -28,7 +30,7 @@ namespace Program_UAS_AHMAD
         private void tampil()
         {
             ds.Clear();
-            string sql = "select ID,Nama_Item,harga,stok,kategori from TB_PRODUCTS where kategori='" + txtkat.Text + "'";
+            string sql = "select ID,Nama_Item,harga,stok,kategori,gambar from TB_PRODUCTS where kategori='" + txtkat.Text + "'";
             OleDbConnection con = new OleDbConnection(koneksi);
             con.Open();
             OleDbDataAdapter da = new OleDbDataAdapter(sql, con);
@@ -64,14 +66,14 @@ namespace Program_UAS_AHMAD
                 DialogResult result = MessageBox.Show("Yakin Hapus?", "Peringatan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    string sql = string.Format("delete * from TB_PRODUCTS  where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
+                    string sql = string.Format("delete * from TB_PRODUCTS  where id='" +lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
                     OleDbConnection con = new OleDbConnection(koneksi);
                     con.Open();
                     OleDbCommand cmd = new OleDbCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     tampil();
-                }
+                }   
             }
 
             catch (OleDbException salah)
@@ -92,7 +94,7 @@ namespace Program_UAS_AHMAD
 
         private void btsave_Click(object sender, EventArgs e)
         {
-            if (txtid.Text == "" || txtharga.Text == "" || txtdes.Text == "" || txtkat.Text =="" || txtstok.Text =="")
+            if (txtid.Text == "" || txtharga.Text == "" || txtdes.Text == "" || txtkat.Text =="" || txtstok.Text =="" || lblfilename.Text =="" ||  lblfilename.Text == "-")
             {
                 MessageBox.Show("Data tidak boleh kosong", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtdes.Clear();
@@ -103,7 +105,7 @@ namespace Program_UAS_AHMAD
 
             try
             {
-                string sql = string.Format("Update TB_PRODUCTS  set Nama_Item ='" + txtdes.Text + "',Harga='" + txtharga.Text + "',stok ='" + txtstok.Text + "' where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
+                string sql = string.Format("Update TB_PRODUCTS  set Nama_Item ='" + txtdes.Text + "',Harga='" + txtharga.Text + "',stok ='" + txtstok.Text + "'where id='" + lblid.Text + txtid.Text + "' AND kategori='" + txtkat.Text + "'");
                 OleDbConnection con = new OleDbConnection(koneksi);
                 con.Open();
                 OleDbCommand cmd = new OleDbCommand(sql, con);
@@ -116,6 +118,7 @@ namespace Program_UAS_AHMAD
             catch (OleDbException salah)
             {
                 MessageBox.Show(salah.ToString());
+               
             }
         }
 
@@ -124,35 +127,50 @@ namespace Program_UAS_AHMAD
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.DG.Rows[e.RowIndex];
+                string text1 = row.Cells["ID"].Value.ToString();
+                string retString;
+                retString = text1.Substring(3);
+                txtid.Text = retString;
 
-                txtid.Text = row.Cells["ID"].Value.ToString();
                 txtdes.Text = row.Cells["Nama_Item"].Value.ToString();
                 txtharga.Text = row.Cells["Harga"].Value.ToString();
                 txtstok.Text = row.Cells["stok"].Value.ToString();
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.Image = Image.FromFile(row.Cells["gambar"].Value.ToString());
 
             }
-        }
+            }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private  byte[] Savephoto()
+        {
+            MemoryStream ms = new MemoryStream();
+            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            return ms.GetBuffer();
+        }
+
         private void btnew_Click(object sender, EventArgs e)
         {
-            if (txtid.Text == "" || txtharga.Text == "" || txtdes.Text == "" || txtkat.Text == "" || txtstok.Text == "")
+            if (txtid.Text == "" || txtharga.Text == "" || txtdes.Text == "" || txtkat.Text == "" || txtstok.Text == "" || lblfilename.Text == "" || lblfilename.Text == "-")
             {
                 MessageBox.Show("Data tidak boleh kosong", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtdes.Clear();
                 txtharga.Clear();
                 txtid.Clear();
+                return;
             }
             try
             {
-                string sql = string.Format("Insert into TB_PRODUCTS (ID,Nama_Item,Harga,stok,kategori) Values('{0}','{1}','{2}','{3}','{4}')", txtid.Text, txtdes.Text, txtharga.Text,txtstok.Text,txtkat.Text);
+
+                string sql = string.Format("Insert into TB_PRODUCTS (ID,Nama_Item,Harga,stok,kategori,gambar) Values('{0}','{1}','{2}','{3}','{4}','{5}')", lblid.Text + txtid.Text, txtdes.Text, txtharga.Text,txtstok.Text,txtkat.Text, Path.Combine(new string[] { Application.StartupPath , lblfilename.Text }));
                 OleDbConnection con = new OleDbConnection(koneksi);
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand(sql, con);
+
+                cmd = new OleDbCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Data Tersimpan", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -171,9 +189,15 @@ namespace Program_UAS_AHMAD
             txtstok.Text = grandstok.ToString();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            
+}
+
         private void btnopen_Click(object sender, EventArgs e)
         {
-            using(OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.JPG", ValidateNames = true, Multiselect = false })
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.JPG", ValidateNames = true, Multiselect = false })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -182,12 +206,13 @@ namespace Program_UAS_AHMAD
                     filename2 = ofd.FileName;
 
                     filename1 = Path.GetFileName(filename1);
-                    lblfilename.Text = filename1;
-                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
+                   
+                    lblfilename2.Text = filename1;
+                    lblfilename.Text = filename2;
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox1.Image = Image.FromFile(filename2);
                 }
-              
             }
         }
 
@@ -195,7 +220,7 @@ namespace Program_UAS_AHMAD
         {
             
            stok =  Convert.ToDouble(txtstok.Text);
-          grandstok = stok - 1;
+             grandstok = stok - 1;
             txtstok.Text = grandstok.ToString();
 
            
