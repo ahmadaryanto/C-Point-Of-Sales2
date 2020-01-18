@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmstockshirtgirl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblid = new System.Windows.Forms.Label();
             this.txtkat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,9 +52,16 @@
             this.Label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblfilename2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnopen = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblfilename = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             this.Panel1.SuspendLayout();
             this.GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblid
@@ -65,7 +72,7 @@
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(40, 24);
             this.lblid.TabIndex = 29;
-            this.lblid.Text = "BP-";
+            this.lblid.Text = "PB-";
             // 
             // txtkat
             // 
@@ -183,21 +190,22 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle5;
             this.DG.Location = new System.Drawing.Point(8, 316);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
             this.DG.RowHeadersVisible = false;
             this.DG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DG.Size = new System.Drawing.Size(608, 231);
+            this.DG.Size = new System.Drawing.Size(754, 231);
             this.DG.TabIndex = 31;
+            this.DG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DG_CellContentClick);
             // 
             // Panel1
             // 
@@ -290,17 +298,23 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(581, 8);
+            this.button5.Location = new System.Drawing.Point(718, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(44, 39);
             this.button5.TabIndex = 32;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.lblfilename2);
             this.GroupBox1.Controls.Add(this.lblid);
+            this.GroupBox1.Controls.Add(this.label6);
             this.GroupBox1.Controls.Add(this.txtkat);
+            this.GroupBox1.Controls.Add(this.button4);
+            this.GroupBox1.Controls.Add(this.btnopen);
             this.GroupBox1.Controls.Add(this.label5);
+            this.GroupBox1.Controls.Add(this.pictureBox1);
             this.GroupBox1.Controls.Add(this.button3);
             this.GroupBox1.Controls.Add(this.button1);
             this.GroupBox1.Controls.Add(this.txtstok);
@@ -311,21 +325,90 @@
             this.GroupBox1.Controls.Add(this.Label3);
             this.GroupBox1.Controls.Add(this.Label2);
             this.GroupBox1.Controls.Add(this.Label1);
+            this.GroupBox1.Controls.Add(this.lblfilename);
             this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.GroupBox1.Location = new System.Drawing.Point(8, 86);
             this.GroupBox1.Name = "GroupBox1";
-            this.GroupBox1.Size = new System.Drawing.Size(608, 210);
+            this.GroupBox1.Size = new System.Drawing.Size(754, 224);
             this.GroupBox1.TabIndex = 29;
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Detail";
+            // 
+            // lblfilename2
+            // 
+            this.lblfilename2.AutoSize = true;
+            this.lblfilename2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblfilename2.Location = new System.Drawing.Point(512, 187);
+            this.lblfilename2.Name = "lblfilename2";
+            this.lblfilename2.Size = new System.Drawing.Size(16, 24);
+            this.lblfilename2.TabIndex = 39;
+            this.lblfilename2.Text = "-";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(402, 187);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 24);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "File name :";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(573, 99);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(83, 43);
+            this.button4.TabIndex = 37;
+            this.button4.Text = "CLEAR";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnopen
+            // 
+            this.btnopen.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnopen.FlatAppearance.BorderSize = 0;
+            this.btnopen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnopen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnopen.Location = new System.Drawing.Point(573, 45);
+            this.btnopen.Name = "btnopen";
+            this.btnopen.Size = new System.Drawing.Size(83, 43);
+            this.btnopen.TabIndex = 35;
+            this.btnopen.Text = "Open";
+            this.btnopen.UseVisualStyleBackColor = false;
+            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SlateGray;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(406, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(161, 151);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblfilename
+            // 
+            this.lblfilename.AutoSize = true;
+            this.lblfilename.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblfilename.Location = new System.Drawing.Point(512, 187);
+            this.lblfilename.Name = "lblfilename";
+            this.lblfilename.Size = new System.Drawing.Size(16, 24);
+            this.lblfilename.TabIndex = 40;
+            this.lblfilename.Text = "-";
             // 
             // frmstockshirtgirl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(632, 554);
+            this.ClientSize = new System.Drawing.Size(774, 554);
             this.Controls.Add(this.DG);
             this.Controls.Add(this.Panel1);
             this.Controls.Add(this.button5);
@@ -338,6 +421,7 @@
             this.Panel1.ResumeLayout(false);
             this.GroupBox1.ResumeLayout(false);
             this.GroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,5 +450,11 @@
         internal System.Windows.Forms.Label Label1;
         private System.Windows.Forms.Button button5;
         internal System.Windows.Forms.GroupBox GroupBox1;
+        internal System.Windows.Forms.Label lblfilename2;
+        internal System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnopen;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        internal System.Windows.Forms.Label lblfilename;
     }
 }
