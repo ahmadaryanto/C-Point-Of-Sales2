@@ -16,7 +16,7 @@ namespace Program_UAS_AHMAD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmstockshirtgirl());
+            Application.Run(new frmtrouserboy());
         }
     }
 }

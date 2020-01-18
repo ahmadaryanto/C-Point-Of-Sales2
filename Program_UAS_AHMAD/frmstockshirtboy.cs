@@ -148,7 +148,7 @@ namespace Program_UAS_AHMAD
                 DataGridViewRow row = this.DG.Rows[e.RowIndex];
                 string text1 = row.Cells["ID"].Value.ToString();
                 string retString;
-                retString = text1.Substring(3);
+                retString = text1.Substring(4);
                 txtid.Text = retString;
 
                 txtdes.Text = row.Cells["Nama_Item"].Value.ToString();

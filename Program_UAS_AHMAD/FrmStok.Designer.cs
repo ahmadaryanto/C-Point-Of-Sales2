@@ -45,10 +45,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +75,7 @@
             this.lbljam.ForeColor = System.Drawing.Color.Maroon;
             this.lbljam.Location = new System.Drawing.Point(917, 7);
             this.lbljam.Name = "lbljam";
-            this.lbljam.Size = new System.Drawing.Size(50, 28);
+            this.lbljam.Size = new System.Drawing.Size(53, 28);
             this.lbljam.TabIndex = 7;
             this.lbljam.Text = "Jam";
             // 
@@ -86,7 +86,7 @@
             this.label3.ForeColor = System.Drawing.Color.Snow;
             this.label3.Location = new System.Drawing.Point(5, 4);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(218, 28);
+            this.label3.Size = new System.Drawing.Size(229, 28);
             this.label3.TabIndex = 7;
             this.label3.Text = "Gucci Gang Style APP";
             // 
@@ -103,7 +103,7 @@
             this.label7.ForeColor = System.Drawing.Color.Snow;
             this.label7.Location = new System.Drawing.Point(41, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 28);
+            this.label7.Size = new System.Drawing.Size(118, 28);
             this.label7.TabIndex = 9;
             this.label7.Text = "username";
             // 
@@ -175,7 +175,7 @@
             this.label1.ForeColor = System.Drawing.Color.Snow;
             this.label1.Location = new System.Drawing.Point(41, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 28);
+            this.label1.Size = new System.Drawing.Size(107, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome";
             // 
@@ -206,7 +206,7 @@
             this.label2.ForeColor = System.Drawing.Color.Snow;
             this.label2.Location = new System.Drawing.Point(514, 4);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 28);
+            this.label2.Size = new System.Drawing.Size(59, 28);
             this.label2.TabIndex = 8;
             this.label2.Text = "Stok";
             // 
@@ -229,33 +229,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 806);
+            this.panel1.Size = new System.Drawing.Size(200, 788);
             this.panel1.TabIndex = 10;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(23, 263);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(177, 62);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Trousers";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel3.Location = new System.Drawing.Point(0, 263);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 62);
-            this.panel3.TabIndex = 13;
             // 
             // button4
             // 
@@ -282,19 +257,44 @@
             this.panel5.Size = new System.Drawing.Size(200, 62);
             this.panel5.TabIndex = 15;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(23, 263);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(177, 62);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Trousers";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel3.Location = new System.Drawing.Point(0, 263);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 62);
+            this.panel3.TabIndex = 13;
+            // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(200, 37);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1056, 769);
+            this.panel7.Size = new System.Drawing.Size(1056, 751);
             this.panel7.TabIndex = 12;
             // 
             // FrmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1256, 806);
+            this.ClientSize = new System.Drawing.Size(1256, 788);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

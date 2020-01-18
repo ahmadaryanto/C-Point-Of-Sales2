@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmtrouserboy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btsave = new System.Windows.Forms.Button();
             this.DG = new System.Windows.Forms.DataGridView();
             this.Button2 = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.lblfilename2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GroupBox1.SuspendLayout();
@@ -74,6 +75,7 @@
             this.btsave.Size = new System.Drawing.Size(50, 50);
             this.btsave.TabIndex = 3;
             this.btsave.UseVisualStyleBackColor = false;
+            this.btsave.Click += new System.EventHandler(this.btsave_Click);
             // 
             // DG
             // 
@@ -81,14 +83,14 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle16;
             this.DG.Location = new System.Drawing.Point(10, 314);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
@@ -109,6 +111,7 @@
             this.Button2.TabIndex = 6;
             this.Button2.Text = "Show All";
             this.Button2.UseVisualStyleBackColor = false;
+            this.Button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btsearch
             // 
@@ -120,6 +123,7 @@
             this.btsearch.Size = new System.Drawing.Size(50, 50);
             this.btsearch.TabIndex = 5;
             this.btsearch.UseVisualStyleBackColor = true;
+            this.btsearch.Click += new System.EventHandler(this.btsearch_Click);
             // 
             // btdelete
             // 
@@ -132,6 +136,7 @@
             this.btdelete.Size = new System.Drawing.Size(50, 50);
             this.btdelete.TabIndex = 4;
             this.btdelete.UseVisualStyleBackColor = false;
+            this.btdelete.Click += new System.EventHandler(this.btdelete_Click);
             // 
             // btnew
             // 
@@ -155,6 +160,7 @@
             this.lblfilename.Size = new System.Drawing.Size(16, 24);
             this.lblfilename.TabIndex = 33;
             this.lblfilename.Text = "-";
+            this.lblfilename.Visible = false;
             // 
             // label6
             // 
@@ -176,8 +182,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(83, 43);
             this.button4.TabIndex = 31;
-            this.button4.Text = "ALL";
+            this.button4.Text = "CLEAR";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnopen
             // 
@@ -191,6 +198,7 @@
             this.btnopen.TabIndex = 7;
             this.btnopen.Text = "Open";
             this.btnopen.UseVisualStyleBackColor = false;
+            this.btnopen.Click += new System.EventHandler(this.btnopen_Click);
             // 
             // pictureBox1
             // 
@@ -206,11 +214,11 @@
             // 
             this.lblid.AutoSize = true;
             this.lblid.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblid.Location = new System.Drawing.Point(153, 30);
+            this.lblid.Location = new System.Drawing.Point(146, 30);
             this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(40, 24);
+            this.lblid.Size = new System.Drawing.Size(54, 24);
             this.lblid.TabIndex = 29;
-            this.lblid.Text = "BP-";
+            this.lblid.Text = "CPR-";
             // 
             // txtkat
             // 
@@ -219,7 +227,7 @@
             this.txtkat.Name = "txtkat";
             this.txtkat.Size = new System.Drawing.Size(241, 29);
             this.txtkat.TabIndex = 28;
-            this.txtkat.Text = "Baju Pria";
+            this.txtkat.Text = "Celana Pria";
             // 
             // label5
             // 
@@ -284,6 +292,7 @@
             // 
             // GroupBox1
             // 
+            this.GroupBox1.Controls.Add(this.lblfilename2);
             this.GroupBox1.Controls.Add(this.lblfilename);
             this.GroupBox1.Controls.Add(this.label6);
             this.GroupBox1.Controls.Add(this.button4);
@@ -324,6 +333,7 @@
             this.button3.Size = new System.Drawing.Size(36, 31);
             this.button3.TabIndex = 26;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -338,6 +348,7 @@
             this.button1.Size = new System.Drawing.Size(36, 31);
             this.button1.TabIndex = 25;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtstok
             // 
@@ -369,6 +380,7 @@
             this.button5.Size = new System.Drawing.Size(44, 39);
             this.button5.TabIndex = 32;
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // Panel1
             // 
@@ -381,6 +393,16 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(251, 50);
             this.Panel1.TabIndex = 30;
+            // 
+            // lblfilename2
+            // 
+            this.lblfilename2.AutoSize = true;
+            this.lblfilename2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblfilename2.Location = new System.Drawing.Point(533, 190);
+            this.lblfilename2.Name = "lblfilename2";
+            this.lblfilename2.Size = new System.Drawing.Size(16, 24);
+            this.lblfilename2.TabIndex = 40;
+            this.lblfilename2.Text = "-";
             // 
             // frmtrouserboy
             // 
@@ -434,5 +456,6 @@
         internal System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
         internal System.Windows.Forms.Panel Panel1;
+        internal System.Windows.Forms.Label lblfilename2;
     }
 }
