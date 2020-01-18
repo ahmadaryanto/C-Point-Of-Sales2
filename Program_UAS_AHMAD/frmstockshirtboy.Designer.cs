@@ -115,6 +115,7 @@
             this.txtstok.Name = "txtstok";
             this.txtstok.Size = new System.Drawing.Size(75, 29);
             this.txtstok.TabIndex = 6;
+            this.txtstok.TextChanged += new System.EventHandler(this.txtstok_TextChanged);
             // 
             // label4
             // 
@@ -260,6 +261,7 @@
             this.txtharga.Name = "txtharga";
             this.txtharga.Size = new System.Drawing.Size(241, 29);
             this.txtharga.TabIndex = 3;
+            this.txtharga.TextChanged += new System.EventHandler(this.txtharga_TextChanged);
             // 
             // txtdes
             // 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmtrouserboy));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btsave = new System.Windows.Forms.Button();
             this.DG = new System.Windows.Forms.DataGridView();
             this.Button2 = new System.Windows.Forms.Button();
@@ -51,13 +51,13 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblfilename2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtstok = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.Panel1 = new System.Windows.Forms.Panel();
-            this.lblfilename2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.GroupBox1.SuspendLayout();
@@ -83,14 +83,14 @@
             this.DG.AllowUserToDeleteRows = false;
             this.DG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DG.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DG.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DG.DefaultCellStyle = dataGridViewCellStyle1;
             this.DG.Location = new System.Drawing.Point(10, 314);
             this.DG.Name = "DG";
             this.DG.ReadOnly = true;
@@ -245,6 +245,7 @@
             this.txtharga.Name = "txtharga";
             this.txtharga.Size = new System.Drawing.Size(241, 29);
             this.txtharga.TabIndex = 3;
+            this.txtharga.TextChanged += new System.EventHandler(this.txtharga_TextChanged);
             // 
             // txtdes
             // 
@@ -320,6 +321,16 @@
             this.GroupBox1.TabStop = false;
             this.GroupBox1.Text = "Detail";
             // 
+            // lblfilename2
+            // 
+            this.lblfilename2.AutoSize = true;
+            this.lblfilename2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblfilename2.Location = new System.Drawing.Point(533, 190);
+            this.lblfilename2.Name = "lblfilename2";
+            this.lblfilename2.Size = new System.Drawing.Size(16, 24);
+            this.lblfilename2.TabIndex = 40;
+            this.lblfilename2.Text = "-";
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -356,6 +367,7 @@
             this.txtstok.Name = "txtstok";
             this.txtstok.Size = new System.Drawing.Size(75, 29);
             this.txtstok.TabIndex = 6;
+            this.txtstok.TextChanged += new System.EventHandler(this.txtstok_TextChanged);
             // 
             // label4
             // 
@@ -393,16 +405,6 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(251, 50);
             this.Panel1.TabIndex = 30;
-            // 
-            // lblfilename2
-            // 
-            this.lblfilename2.AutoSize = true;
-            this.lblfilename2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblfilename2.Location = new System.Drawing.Point(533, 190);
-            this.lblfilename2.Name = "lblfilename2";
-            this.lblfilename2.Size = new System.Drawing.Size(16, 24);
-            this.lblfilename2.TabIndex = 40;
-            this.lblfilename2.Text = "-";
             // 
             // frmtrouserboy
             // 

@@ -229,6 +229,24 @@ namespace Program_UAS_AHMAD
             lblfilename2.Text = "-";
         }
 
+        private void txtharga_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtharga.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtharga.Text = txtharga.Text.Remove(txtharga.Text.Length - 1);
+            }
+        }
+
+        private void txtstok_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtharga.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                txtstok.Text = txtstok.Text.Remove(txtstok.Text.Length - 1);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             stok = Convert.ToDouble(txtstok.Text);
