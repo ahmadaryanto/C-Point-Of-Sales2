@@ -73,6 +73,15 @@ namespace Program_UAS_AHMAD
                     cmd.ExecuteNonQuery();
                     con.Close();
                     tampil();
+
+                    txtstok.Clear();
+                    lblfilename.Text = "-";
+                    lblfilename2.Text = "-";
+                    txtdes.Clear();
+                    txtharga.Clear();
+                    txtid.Clear();
+                    
+
                 }   
             }
 
@@ -80,6 +89,7 @@ namespace Program_UAS_AHMAD
             {
                 MessageBox.Show(salah.ToString());
             }
+
         }
 
         private void btsearch_Click(object sender, EventArgs e)
@@ -99,7 +109,10 @@ namespace Program_UAS_AHMAD
                 MessageBox.Show("Data tidak boleh kosong", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtdes.Clear();
                 txtharga.Clear();
+                txtstok.Clear();
                 txtid.Clear();
+                lblfilename.Text = "-";
+                lblfilename2.Text = "-";
                 return;
             }
 
@@ -114,6 +127,12 @@ namespace Program_UAS_AHMAD
                 MessageBox.Show("Perubahan Data Tersimpan", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ds.Clear();
                 tampil();
+                txtdes.Clear();
+                txtharga.Clear();
+                txtstok.Clear();
+                txtid.Clear();
+                lblfilename.Text = "-";
+                lblfilename2.Text = "-";
             }
             catch (OleDbException salah)
             {
@@ -161,7 +180,10 @@ namespace Program_UAS_AHMAD
                 MessageBox.Show("Data tidak boleh kosong", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtdes.Clear();
                 txtharga.Clear();
+                txtstok.Clear();
                 txtid.Clear();
+                lblfilename.Text = "-";
+                lblfilename2.Text = "-";
                 return;
             }
             try
@@ -176,6 +198,12 @@ namespace Program_UAS_AHMAD
                 con.Close();
                 MessageBox.Show("Data Tersimpan", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tampil();
+                txtdes.Clear();
+                txtharga.Clear();
+                txtstok.Clear();
+                txtid.Clear();
+                lblfilename.Text = "-";
+                lblfilename2.Text = "-";
             }
             catch (OleDbException salah)
             {
@@ -193,7 +221,8 @@ namespace Program_UAS_AHMAD
         private void button4_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
-
+            lblfilename.Text = "-";
+            lblfilename2.Text = "-";
         }
 
         private void btnopen_Click(object sender, EventArgs e)
