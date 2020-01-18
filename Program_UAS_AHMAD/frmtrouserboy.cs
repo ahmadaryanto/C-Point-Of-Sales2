@@ -21,8 +21,7 @@ namespace Program_UAS_AHMAD
         OleDbCommand cmd = new OleDbCommand();
 
 
-        double grandstok, stok;
-        string filename1, filename2;
+       
         public frmtrouserboy()
         {
             InitializeComponent();
