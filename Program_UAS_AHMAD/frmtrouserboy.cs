@@ -231,12 +231,16 @@ namespace Program_UAS_AHMAD
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            stok = Convert.ToDouble(txtstok.Text);
+            grandstok = stok + 1;
+            txtstok.Text = grandstok.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            stok = Convert.ToDouble(txtstok.Text);
+            grandstok = stok - 1;
+            txtstok.Text = grandstok.ToString();
         }
     }
 }
