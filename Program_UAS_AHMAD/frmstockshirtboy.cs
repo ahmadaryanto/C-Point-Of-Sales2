@@ -192,7 +192,6 @@ namespace Program_UAS_AHMAD
                 string sql = string.Format("Insert into TB_PRODUCTS (ID,Nama_Item,Harga,stok,kategori,gambar) Values('{0}','{1}','{2}','{3}','{4}','{5}')", lblid.Text + txtid.Text, txtdes.Text, txtharga.Text,txtstok.Text,txtkat.Text, Path.Combine(new string[] { Application.StartupPath , lblfilename.Text }));
                 OleDbConnection con = new OleDbConnection(koneksi);
                 con.Open();
-
                 cmd = new OleDbCommand(sql, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
