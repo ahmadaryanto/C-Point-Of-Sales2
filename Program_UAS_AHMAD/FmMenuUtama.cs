@@ -18,7 +18,17 @@ namespace Program_UAS_AHMAD
         DataSet ds = new DataSet();
         OleDbCommand cmd = new OleDbCommand();
         DataTable table = new DataTable();
-    
+        public string LabelText
+        {
+            get
+            {
+                return this.lbluser.Text;
+            }
+            set
+            {
+                this.lbluser.Text = value;
+            }
+        }
         private void tampil()
         {
             ds.Clear();
@@ -172,6 +182,8 @@ namespace Program_UAS_AHMAD
                     con.Close();
                     MessageBox.Show("PESANAN BERHASIL DITAMBAHKAN", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                frmbayar bayar = new frmbayar(lblgrand.Text);
+                bayar.ShowDialog();
                 this.dataGridView1.DataSource = null;
                 table.Clear();
             }

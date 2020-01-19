@@ -37,6 +37,7 @@ namespace Program_UAS_AHMAD
             if (Dr.Read())
             {
                 FmMenuUtama F1 = new FmMenuUtama();
+                F1.LabelText = this.txtname.Text;
                 F1.Show();
                 this.Hide();
             }
