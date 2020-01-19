@@ -166,12 +166,7 @@ namespace Program_UAS_AHMAD
             this.Close();
         }
 
-        private  byte[] Savephoto()
-        {
-            MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-            return ms.GetBuffer();
-        }
+     
 
         private void btnew_Click(object sender, EventArgs e)
         {
