@@ -18,7 +18,7 @@ namespace Program_UAS_AHMAD
         DataSet ds = new DataSet();
         OleDbCommand cmd = new OleDbCommand();
         DataTable table = new DataTable();
-        string waktu = DateTime.Now.ToString("HH:mm:ss");
+    
         private void tampil()
         {
             ds.Clear();
@@ -58,8 +58,8 @@ namespace Program_UAS_AHMAD
             this.DG.Columns["Kategori"].Visible = false;
             table.Columns.Add("id_item", typeof(string));
             table.Columns.Add("nama_item", typeof(string));
-            table.Columns.Add("HARGA", typeof(string));
             table.Columns.Add("QTY", typeof(string));
+            table.Columns.Add("HARGA", typeof(string));
             table.Columns.Add("TOTAL", typeof(string));
 
           
@@ -67,6 +67,8 @@ namespace Program_UAS_AHMAD
 
         private void button15_Click(object sender, EventArgs e)
         {
+            var random = new Random();
+            double randomnumber = random.Next();
 
             int custambah, cust;
            
@@ -120,8 +122,9 @@ namespace Program_UAS_AHMAD
                 sum += Convert.ToDouble(dataGridView1.Rows[i].Cells[3].Value);
             }
             double tax = sum * 0.10;
+            double grandtot = sum + tax; 
             lbltax.Text = tax.ToString("#,##0");
-            lblgrand.Text = sum.ToString("#,##0");
+            lblgrand.Text = grandtot.ToString("#,##0");
            
         }
 
@@ -149,7 +152,7 @@ namespace Program_UAS_AHMAD
                 txtjumlah.Text = txtjumlah.Text.Remove(txtjumlah.Text.Length - 1);
             }
         }
-
+        Bitmap bmp;
         private void btsave_Click(object sender, EventArgs e)
         {
            
@@ -161,24 +164,23 @@ namespace Program_UAS_AHMAD
                 
                 {
                     con.Open();
-
-                    string sql = string.Format("Insert into TB_PEMESANAN (IDPemesanan,ID_Customer,ID_Barang,Nama_Item,harga,QTY,GrandTotal) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", "PS " + waktu , "cs" + lblnocust.Text + waktu ,
+                    string sql = string.Format("Insert into TB_PEMESANAN (IDPemesanan,ID_Customer,ID_Barang,Nama_Item,harga,QTY,GrandTotal) Values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", "PS " + lblnocust.Text , "cs" + lblnocust.Text + lbljam.Text ,
                        dataGridView1.Rows[i].Cells["id_item"].Value, dataGridView1.Rows[i].Cells["Nama_ITEM"].Value , dataGridView1.Rows[i].Cells["QTY"].Value ,  dataGridView1.Rows[i].Cells["Harga"].Value , dataGridView1.Rows[i].Cells["TOTAL"].Value);
-
-                
                     cmd = new OleDbCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
+                    MessageBox.Show("PESANAN BERHASIL DITAMBAHKAN", "Pemberitahuan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 this.dataGridView1.DataSource = null;
-
-               
+                table.Clear();
             }
             else
             {
                 MessageBox.Show("DATA TIDAK BOLEH KOSONG");
                 this.dataGridView1.Rows.Clear();
             }
+           
+          
         }
 
         private void btsearch_Click(object sender, EventArgs e)
@@ -195,6 +197,29 @@ namespace Program_UAS_AHMAD
         {
          
             lbljam.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int height = dataGridView1.Height;
+            dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height * 1;
+            bmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bmp, new Rectangle(0, 0, dataGridView1.Width, dataGridView1.Height));
+            dataGridView1.Height = height;
+            printPreviewDialog1.Show();
+
+            printPreviewDialog1.Show();
         }
     }
 }
