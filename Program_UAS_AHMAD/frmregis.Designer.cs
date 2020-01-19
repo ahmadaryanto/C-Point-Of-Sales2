@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmregis));
             this.btnupdate = new System.Windows.Forms.Button();
             this.Label4 = new System.Windows.Forms.Label();
             this.cmbtipe = new System.Windows.Forms.ComboBox();
@@ -36,6 +37,7 @@
             this.txtpass = new System.Windows.Forms.TextBox();
             this.Label2 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnupdate
@@ -122,11 +124,27 @@
             this.Label1.TabIndex = 20;
             this.Label1.Text = "Username";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(365, 9);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(44, 39);
+            this.button5.TabIndex = 27;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // frmregis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 277);
+            this.ClientSize = new System.Drawing.Size(421, 277);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.Label4);
             this.Controls.Add(this.cmbtipe);
@@ -152,5 +170,6 @@
         internal System.Windows.Forms.TextBox txtpass;
         internal System.Windows.Forms.Label Label2;
         internal System.Windows.Forms.Label Label1;
+        private System.Windows.Forms.Button button5;
     }
 }

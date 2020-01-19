@@ -163,7 +163,9 @@ namespace Program_UAS_AHMAD
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            FmMenuUtama menu = new FmMenuUtama();
+            this.Hide();
+            menu.Show();
         }
 
      

@@ -47,5 +47,12 @@ namespace Program_UAS_AHMAD
             Con.Close();
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FmMenuUtama menu = new FmMenuUtama();
+            this.Hide();
+            menu.Show();
+        }
     }
 }

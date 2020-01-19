@@ -90,6 +90,7 @@ namespace Program_UAS_AHMAD
                 txtitem.Text = row.Cells["Nama_Item"].Value.ToString();
                 lblharga.Text = row.Cells["harga"].Value.ToString();
                 txtid.Text = row.Cells["id"].Value.ToString();
+                pictureBox1.Image = Image.FromFile(row.Cells["gambar"].Value.ToString());
             }
         }
 
@@ -220,6 +221,21 @@ namespace Program_UAS_AHMAD
             printPreviewDialog1.Show();
 
             printPreviewDialog1.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmStok stok = new FrmStok();
+            this.Hide();
+            stok.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmregis regist = new frmregis();
+            this.Hide();
+            regist.ShowDialog();
+        
         }
     }
 }
